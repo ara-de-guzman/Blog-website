@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Blog Website</title>
+  </head>
+  <body>
+    <!-- menu -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blogs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <header>
+      <div class="logo">
+        <a href="/index.html"><img src="images/worldlogo.png" alt="logo"></a>
+      </div>
+      <div class="social-media">
+        <div><i class="fa-brands fa-x-twitter"></i></div>
+        <div><i class="fa-brands fa-facebook"></i></div>
+        <div><i class="fa-brands fa-square-instagram"></i></div>
+        <div><i class="fa-brands fa-youtube"></i></div>
+      </div>
+      <div class="nav-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <section class="contact-section">
+      <div class="contact-img">
+        <p>
+          <i class="fa-solid fa-quote-left"></i>To Travel is to Live
+          <small>- Hans Christian Andersen</small>
+        </p>
+
+        <img src="images/webblog.jpg" alt="" />
+      </div>
+      <div class="contact-form">
+        <h1>Contact Me</h1>
+        <form onsubmit="{submitForm()}">
+          <label for="name">Name</label>
+          <input type="text" />
+          <label for="email">Email</label>
+          <input type="email" />
+          <label for="tel">Tel</label>
+          <input type="tel" />
+          <label for="message">Message</label>
+          <textarea></textarea>
+          <div class="form-btn">
+            <button>Submit</button>
+            <button>Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="links">
+        <h4>Useful Links</h4>
+        <div>
+          <p>Home</p>
+          <p>Blogs</p>
+          <p>Contact</p>
+          <p>Shop</p>
+        </div>
+      </div>
+      <div class="terms">
+        <h4>Quick Links</h4>
+        <p>Reviews</p>
+        <p>Disclaimer</p>
+        <p>Terms & Condition</p>
+        <p>Sitemap</p>
+      </div>
+      <div class="subscribe">
+        <label for="subscribe">Subscribe</label>
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+      <div class="social-media-icons">
+        <div><i class="fa-brands fa-x-twitter"></i></div>
+        <div><i class="fa-brands fa-square-instagram"></i></div>
+        <div><i class="fa-brands fa-facebook"></i></div>
+        <div><i class="fa-brands fa-youtube"></i></div>
+      </div>
+    </footer>
+    <script>
+      const navBtn = document.querySelector(".nav-btn");
+      const navMenu = document.querySelector("nav");
+      navBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+
+        if (navMenu.classList.contains("show")) {
+          navBtn.innerHTML = '<i class="fa-solid fa-x"></i>';
+          navBtn.style.color = "#ffff";
+        } else {
+          navBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          navBtn.style.color = "#443b3e";
+        }
+      });
+
+      // nav-menu display
+
+      function showCurrentYHeight() {
+        if (window.scrollY > 0) {
+          navBtn.style.position = "fixed";
+        } else {
+          navBtn.style.position = "static";
+        }
+      }
+
+      window.addEventListener("scroll", showCurrentYHeight);
+
+      function submitForm() {
+        alert("thank you ");
+      }
+    </script>
+  </body>
+</html>
