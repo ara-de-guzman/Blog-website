@@ -729,7 +729,7 @@ footer h4 {
 /* animation */
 
 .hero-img {
-  animation: slideLeft 1s ease;
+  animation: fadeIn 1s ease;
 }
 
 @keyframes slideLeft {
