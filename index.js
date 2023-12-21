@@ -1,9 +1,7 @@
 "use strict";
 
-const navBtn = document.querySelector(".nav-btn");
-const navMenu = document.querySelector("nav");
 const imgSelectorBtns = document.querySelectorAll(".img-btn");
-let imageHero = document.querySelector(".hero-image-display img");
+const imgHeroContainer = document.querySelector(".hero-image-display");
 const mostRecentBtn = document.querySelector("#most-recent-btn");
 const popularBtn = document.querySelector("#popular-btn");
 const aboutMeBtn = document.querySelector("#about-me-btn");
@@ -13,8 +11,6 @@ const popularPostContainer = document.querySelector(".popular-post-container");
 const swiperContainer = document.querySelector(".swiper-wrapper");
 const form = document.querySelector("form");
 
-
-console.log(imageHero)
 // about/post section
 aboutMeBtn.addEventListener("click", () => {
   showDisplay("flex", "none", "none", 900, 200, 200);
@@ -37,37 +33,20 @@ function showDisplay(display1, display2, display3, num1, num2, num3) {
   popularBtn.style.fontWeight = num3;
 }
 
-// menu navigation
-navBtn.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
-
-  if (navMenu.classList.contains("show")) {
-    navBtn.innerHTML = '<i class="fa-solid fa-x"></i>';
-    navBtn.style.color = "#ffff";
-  } else {
-    navBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    navBtn.style.color = "#443b3e";
-  }
-});
-
 // hero image selectors
 
 imgSelectorBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     removeActiveSelection();
     let valueImage = btn.getAttribute("value");
-    console.log(valueImage)
     btn.classList.add("active");
-    imageHero.src = `images/${valueImage}.jpg`;
-    imageHero.style.animation = "slideLeft 1s ease"
- 
+    imgHeroContainer.innerHTML = `<img src="images/${valueImage}.jpg" alt="mathew" class="hero-img"/>`
   });
 });
 
 function removeActiveSelection() {
   imgSelectorBtns.forEach((btn) => {
     btn.classList.remove("active");
-    imageHero.style.animation = "none"
   });
 }
 
@@ -104,19 +83,6 @@ async function getData() {
 }
 
 getData();
-
-
-// nav-menu display
-
-function showCurrentYHeight(){ 
-  if (window.scrollY > 0) {
-    navBtn.style.position = 'fixed'
-  }else {
-    navBtn.style.position =  'static'
-  }
-}
-
-window.addEventListener('scroll',showCurrentYHeight)
 
 // swiper
 

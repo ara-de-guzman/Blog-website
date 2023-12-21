@@ -165,10 +165,9 @@ nav a:hover {
   font-size: 40px;
   cursor: pointer;
   z-index: 10;
-  top:2rem;
- 
-  right:5rem;
-  
+  top: 2rem;
+
+  right: 5rem;
 }
 
 .logo img {
@@ -256,7 +255,7 @@ nav a:hover {
 
 .about-me-container {
   padding: 2rem 0;
-   display: flex;
+  display: flex;
   animation: fadeIn 1s ease;
 }
 
@@ -560,7 +559,6 @@ textarea {
   right: 0;
 }
 
-
 .blog-section-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -730,7 +728,9 @@ footer h4 {
 
 /* animation */
 
-
+.hero-img {
+  animation: slideLeft 1s ease;
+}
 
 @keyframes slideLeft {
   0% {
@@ -742,6 +742,7 @@ footer h4 {
     opacity: 1;
   }
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -879,7 +880,6 @@ footer h4 {
   .about-me-img,
   .about-me-text {
     width: 100%;
-    
   }
   .popular-post-container {
     grid-template-columns: auto;
@@ -970,7 +970,6 @@ footer h4 {
 
   .links,
   .terms {
- 
     text-align: center;
     border-bottom: 1px solid var(--faintgreen-color);
   }
@@ -985,7 +984,6 @@ footer h4 {
   .links p,
   .terms p {
     margin: 0 20px;
-
   }
 
   .subscribe {
@@ -1004,11 +1002,9 @@ footer h4 {
   .swiper {
     width: 100%;
   }
-  
 }
 
 @media screen and (max-width: 680px) {
-  
   body {
     padding: 0 1rem;
   }
@@ -1019,6 +1015,4 @@ footer h4 {
   .search-text {
     width: 100%;
   }
-
-
 }
