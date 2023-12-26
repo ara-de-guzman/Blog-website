@@ -187,9 +187,7 @@ nav a:hover {
   height: 100%;
 }
 
-.hero-text {
-  line-height: 0rem;
-}
+
 
 .hero-text p:nth-of-type(1) {
   font-size: 30px;
