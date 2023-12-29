@@ -24,15 +24,16 @@ popularBtn.addEventListener("click", () => {
   showDisplay("none", "none", "grid", 200, 200, 900);
 });
 
-function showDisplay(display1, display2, display3, num1, num2, num3) {
-  aboutMeContainer.style.display = `${display1}`;
-  recentPostContainer.style.display = `${display2}`;
-  popularPostContainer.style.display = `${display3}`;
-  aboutMeBtn.style.fontWeight = num1;
-  mostRecentBtn.style.fontWeight = num2;
-  popularBtn.style.fontWeight = num3;
+function showDisplay(...args) {
+  console.log(args[0])
+  aboutMeContainer.style.display = `${args[0]}`;
+  recentPostContainer.style.display =`${args[1]}`;
+  popularPostContainer.style.display =`${args[2]}`;
+  aboutMeBtn.style.fontWeight = args[3];
+  mostRecentBtn.style.fontWeight = args[4];
+  popularBtn.style.fontWeight = args[5];
 }
-
+showDisplay();
 // hero image selectors
 
 imgSelectorBtns.forEach((btn) => {
